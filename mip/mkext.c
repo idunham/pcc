@@ -1,4 +1,4 @@
-/*	$Id: mkext.c,v 1.50 2011/06/05 08:54:43 plunky Exp $	*/
+/*	$Id: mkext.c,v 1.51 2012/04/22 21:07:41 plunky Exp $	*/
 
 /*
  * Generate defines for the needed hardops.
@@ -426,7 +426,7 @@ if (bitsz == 64) {
 #define	P(x)	fprintf x
 
 void
-mktables()
+mktables(void)
 {
 	struct optab *op;
 	int mxalen = 0, curalen;

@@ -1,4 +1,4 @@
-/*	$Id: common.c,v 1.101 2012/03/26 16:52:17 ragge Exp $	*/
+/*	$Id: common.c,v 1.102 2012/04/22 21:07:41 plunky Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -251,7 +251,7 @@ int usednodes;
 
 #ifndef LANG_F77
 NODE *
-talloc()
+talloc(void)
 {
 	register NODE *p;
 
@@ -301,7 +301,7 @@ tcopy(NODE *p)
  * ensure that all nodes have been freed
  */
 void
-tcheck()
+tcheck(void)
 {
 	extern int inlnodecnt;
 
@@ -482,7 +482,7 @@ struct dopest {
 };
 
 void
-mkdope()
+mkdope(void)
 {
 	struct dopest *q;
 
@@ -682,7 +682,7 @@ tmpalloc(int size)
 }
 
 void
-tmpfree()
+tmpfree(void)
 {
 	struct xalloc *x1;
 

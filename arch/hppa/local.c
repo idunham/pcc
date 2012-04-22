@@ -1,4 +1,4 @@
-/*	$Id: local.c,v 1.36 2011/09/23 18:19:35 plunky Exp $	*/
+/*	$Id: local.c,v 1.37 2012/04/22 21:07:40 plunky Exp $	*/
 /*	$OpenBSD: local.c,v 1.2 2007/11/18 17:39:55 ragge Exp $	*/
 
 /*
@@ -515,7 +515,7 @@ clocal(NODE *p)
 }
 
 struct symtab *
-makememcpy()
+makememcpy(void)
 {
 	NODE *memcpy, *args, *t, *u;
 	struct symtab *sp;

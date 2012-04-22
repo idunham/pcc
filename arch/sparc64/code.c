@@ -1,4 +1,4 @@
-/*	$Id: code.c,v 1.20 2011/06/23 13:41:25 ragge Exp $	*/
+/*	$Id: code.c,v 1.21 2012/04/22 21:07:40 plunky Exp $	*/
 
 /*
  * Copyright (c) 2008 David Crawshaw <david@zentus.com>
@@ -72,7 +72,7 @@ defloc(struct symtab *sp)
 }
 
 void
-efcode()
+efcode(void)
 {
 	/* XXX */
 }
@@ -116,7 +116,7 @@ ejobcode(int flag)
 }
 
 void
-bjobcode()
+bjobcode(void)
 {
 	astypnames[USHORT] = astypnames[SHORT] = "\t.half";
 	astypnames[INT] = astypnames[UNSIGNED] = "\t.long";
