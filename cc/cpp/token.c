@@ -1,4 +1,4 @@
-/*	$Id: token.c,v 1.65 2012/04/22 12:44:11 ragge Exp $	*/
+/*	$Id: token.c,v 1.66 2012/07/17 19:40:49 ragge Exp $	*/
 
 /*
  * Copyright (c) 2004,2009 Anders Magnusson. All rights reserved.
@@ -736,6 +736,7 @@ again:	switch (c = inpch()) {
 	case '\\': /* continued lines */
 msdos:		if ((c = inpch()) == '\n') {
 			ifiles->lineno++;
+			putch('\n');
 			goto again;
 		} else if (c == '\r')
 			goto msdos;
