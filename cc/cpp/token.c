@@ -1,4 +1,4 @@
-/*	$Id: token.c,v 1.66 2012/07/17 19:40:49 ragge Exp $	*/
+/*	$Id: token.c,v 1.67 2012/07/29 17:27:12 ragge Exp $	*/
 
 /*
  * Copyright (c) 2004,2009 Anders Magnusson. All rights reserved.
@@ -722,6 +722,7 @@ inpch(void)
 		error("read error on file %s", ifiles->orgfn);
 	if (len == 0)
 		return -1;
+	ifiles->buffer[len] = 0;
 	ifiles->curptr = ifiles->buffer;
 	ifiles->maxread = ifiles->buffer + len;
 	return inpch();
