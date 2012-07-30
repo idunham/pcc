@@ -1,4 +1,4 @@
-/*	$Id: pftn.c,v 1.348 2012/07/30 15:27:47 ragge Exp $	*/
+/*	$Id: pftn.c,v 1.349 2012/07/30 16:54:58 ragge Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -368,7 +368,7 @@ defid2(NODE *q, int class, char *astr)
 	/*
 	 * Only allowed for automatic variables.
 	 */
-	if (blevel <= slev || class == EXTERN) {
+	if ((blevel == 2 && slev == 1) || blevel <= slev || class == EXTERN) {
 		uerror("redeclaration of %s", p->sname);
 		return;
 	}
