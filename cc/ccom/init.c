@@ -1,4 +1,4 @@
-/*	$Id: init.c,v 1.80 2012/04/22 21:07:41 plunky Exp $	*/
+/*	$Id: init.c,v 1.81 2012/07/30 13:19:01 ragge Exp $	*/
 
 /*
  * Copyright (c) 2004, 2007 Anders Magnusson (ragge@ludd.ltu.se).
@@ -677,8 +677,10 @@ scalinit(NODE *p)
 		stkpush();
 		/* If we are doing auto struct init */
 		if (ISSOU(pstk->in_t) && ISSOU(p->n_type) &&
-		    suemeq(pstk->in_sym->sap, p->n_ap))
+		    suemeq(pstk->in_sym->sap, p->n_ap)) {
+			pstk->in_lnk = NULL; /* this elem is initialized */
 			break;
+		}
 	}
 
 	if (ISSOU(pstk->in_t) == 0) {
