@@ -1,4 +1,4 @@
-/*	$Id: cpp.c,v 1.152 2012/07/30 12:47:59 plunky Exp $	*/
+/*	$Id: cpp.c,v 1.153 2012/08/06 19:32:39 ragge Exp $	*/
 
 /*
  * Copyright (c) 2004,2010 Anders Magnusson (ragge@ludd.luth.se).
@@ -1520,8 +1520,9 @@ oho:			while ((c = sloscan()) == '\n') {
 	if (ellips && c != ')') {
 		args[i] = stringbuf;
 		plev = 0;
-		while ((c = sloscan()) == WSPACE)
-			;
+		while ((c = sloscan()) == WSPACE || c == '\n')
+			if (c == '\n')
+				cinput();
 		for (;;) {
 			if (plev == 0 && c == ')')
 				break;
