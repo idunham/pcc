@@ -1,4 +1,4 @@
-/*	$Id: cc.c,v 1.231 2012/08/05 19:34:20 ragge Exp $	*/
+/*	$Id: cc.c,v 1.232 2012/08/06 06:47:02 ragge Exp $	*/
 
 /*-
  * Copyright (c) 2011 Joerg Sonnenberger <joerg@NetBSD.org>.
@@ -801,8 +801,14 @@ main(int argc, char *argv[])
 	if (cppflag) {
 		if (ninput == 0) {
 			strlist_append(&inputs, "-");
+			ninput++;
+			xcflag++;
 		} else if (ninput > 2 || (ninput == 2 && outfile)) {
 			errorx(8, "too many files");
+		} else if (ninput == 2) {
+			outfile = STRLIST_NEXT(STRLIST_FIRST(&inputs))->value;
+			STRLIST_FIRST(&inputs)->next = NULL;
+			ninput--;
 		}
 	}
 	if (ninput == 0)
