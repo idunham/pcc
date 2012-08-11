@@ -1,4 +1,4 @@
-/*	$Id: pftn.c,v 1.352 2012/08/10 07:12:48 plunky Exp $	*/
+/*	$Id: pftn.c,v 1.353 2012/08/11 13:29:20 ragge Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -159,6 +159,9 @@ defid2(NODE *q, int class, char *astr)
 	if (q == NIL)
 		return;  /* an error was detected */
 
+#ifdef GCC_COMPAT
+	gcc_modefix(q);
+#endif
 	p = q->n_sp;
 
 	if (p->sname == NULL)
