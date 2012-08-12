@@ -1,4 +1,4 @@
-/*	$Id: cc.c,v 1.239 2012/08/10 11:27:07 ragge Exp $	*/
+/*	$Id: cc.c,v 1.240 2012/08/12 06:23:52 ragge Exp $	*/
 
 /*-
  * Copyright (c) 2011 Joerg Sonnenberger <joerg@NetBSD.org>.
@@ -707,6 +707,9 @@ main(int argc, char *argv[])
 				strlist_append(&compiler_flags, "-x");
 				strlist_append(&compiler_flags, t);
 			}
+			break;
+		case 'T':
+			strlist_append(&inputs, argp);
 			break;
 		case 't':
 			tflag++;
