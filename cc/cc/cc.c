@@ -1,4 +1,4 @@
-/*	$Id: cc.c,v 1.240 2012/08/12 06:23:52 ragge Exp $	*/
+/*	$Id: cc.c,v 1.241 2012/08/13 07:06:42 mickey Exp $	*/
 
 /*-
  * Copyright (c) 2011 Joerg Sonnenberger <joerg@NetBSD.org>.
@@ -710,6 +710,11 @@ main(int argc, char *argv[])
 			break;
 		case 'T':
 			strlist_append(&inputs, argp);
+			if (argp[2] == 0 ||
+			    strcmp(argp, "-Ttext") == 0 ||
+			    strcmp(argp, "-Tdata") == 0 ||
+			    strcmp(argp, "-Tbss") == 0)
+				strlist_append(&inputs, nxtopt(0));
 			break;
 		case 't':
 			tflag++;
