@@ -1,4 +1,4 @@
-/*	$Id: init.c,v 1.84 2012/08/14 20:23:58 ragge Exp $	*/
+/*	$Id: init.c,v 1.85 2012/08/22 16:41:27 ragge Exp $	*/
 
 /*
  * Copyright (c) 2004, 2007 Anders Magnusson (ragge@ludd.ltu.se).
@@ -1222,6 +1222,11 @@ simpleinit(struct symtab *sp, NODE *p)
 		if (ISARY(sp->stype))
 			cerror("no array init");
 		q = nt;
+#ifdef TARGET_TIMODE
+		if ((r = gcc_eval_timode(ASSIGN, q, p)) != NULL)
+			;
+		else
+#endif
 #ifndef NO_COMPLEX
 
 		if (ANYCX(q) || ANYCX(p))
