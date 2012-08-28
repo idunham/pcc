@@ -1,4 +1,4 @@
-/*	$Id: ccconfig.h,v 1.23 2012/08/06 16:29:12 plunky Exp $	*/
+/*	$Id: ccconfig.h,v 1.24 2012/08/28 19:44:56 plunky Exp $	*/
 
 /*
  * Copyright (c) 2004 Anders Magnusson (ragge@ludd.luth.se).
@@ -40,6 +40,8 @@
 
 /* host-independent */
 #define	DYNLINKER { "-dynamic-linker", "/usr/libexec/ld.elf_so", NULL }
+
+#define CRTEND_T	"crtend.o"
 
 #define DEFLIBS		{ "-lc", NULL }
 #define DEFPROFLIBS	{ "-lc_p", NULL }
