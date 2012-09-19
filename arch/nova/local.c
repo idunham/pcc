@@ -1,4 +1,4 @@
-/*	$Id: local.c,v 1.13 2011/06/05 10:29:10 ragge Exp $	*/
+/*	$Id: local.c,v 1.14 2012/09/19 17:08:50 ragge Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -339,7 +339,7 @@ void
 myp2tree(NODE *p)
 {
 	struct symtab *sp;
-	int o = p->n_op, i;
+	int o = p->n_op;
 
 	if (o != FCON) 
 		return;
