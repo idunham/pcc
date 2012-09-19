@@ -1,4 +1,4 @@
-/*	$Id: order.c,v 1.14 2011/02/18 17:08:31 ragge Exp $	*/
+/*	$Id: order.c,v 1.15 2012/09/19 17:06:13 ragge Exp $	*/
 /*
  * Copyright (c) 2008 Michael Shalayeff
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
@@ -40,6 +40,8 @@ int canaddr(NODE *);
 int
 notoff(TWORD t, int r, CONSZ off, char *cp)
 {
+	if (off > MAX_INT || off < MIN_INT)
+		return 1; /* max signed 32-bit offset */
 	return(0);  /* YES */
 }
 
