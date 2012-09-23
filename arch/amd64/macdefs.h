@@ -1,4 +1,4 @@
-/*	$Id: macdefs.h,v 1.25 2012/09/08 15:58:21 ragge Exp $	*/
+/*	$Id: macdefs.h,v 1.26 2012/09/23 09:06:57 ragge Exp $	*/
 /*
  * Copyright (c) 2008 Michael Shalayeff
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
@@ -261,7 +261,6 @@ int numconv(void *ip, void *p, void *q);
 /*
  * builtins.
  */
-#define TARGET_TIMODE
 #define TARGET_VALIST
 #define TARGET_STDARGS
 #define TARGET_BUILTINS							\
