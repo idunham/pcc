@@ -1,4 +1,4 @@
-/*	$Id: manifest.h,v 1.101 2012/09/06 20:51:14 plunky Exp $	*/
+/*	$Id: manifest.h,v 1.102 2012/09/26 19:56:12 plunky Exp $	*/
 /*
  * Copyright(C) Caldera International Inc. 2001-2002. All rights reserved.
  *
@@ -329,7 +329,7 @@ void markfree(struct mark *m);
 /* command-line processing */
 void mflags(char *);
 
-void tprint(FILE *, TWORD, TWORD);
+void tprint(TWORD, TWORD);
 
 /* pass t communication subroutines */
 void topt_compile(struct interpass *);
