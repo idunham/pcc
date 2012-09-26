@@ -1,4 +1,4 @@
-/*	$Id: local2.c,v 1.40 2008/11/22 16:12:24 ragge Exp $	*/
+/*	$Id: local2.c,v 1.41 2012/09/26 20:22:41 plunky Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -383,7 +383,7 @@ upput(NODE *p, int size)
 	size /= SZINT;
 	switch (p->n_op) {
 	case REG:
-		fputs(rnames[p->n_rval + 1], stdout);
+		printf("%s", rnames[p->n_rval + 1]);
 		break;
 
 	case NAME:
@@ -393,7 +393,7 @@ upput(NODE *p, int size)
 		p->n_lval -= size;
 		break;
 	case ICON:
-		fprintf(stdout, "#" CONFMT, p->n_lval >> 16);
+		printf("#" CONFMT, p->n_lval >> 16);
 		break;
 	default:
 		comperr("upput bad op %d size %d", p->n_op, size);

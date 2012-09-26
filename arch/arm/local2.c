@@ -1,4 +1,4 @@
-/*      $Id: local2.c,v 1.34 2008/12/14 21:16:58 ragge Exp $    */
+/*      $Id: local2.c,v 1.35 2012/09/26 20:22:41 plunky Exp $    */
 /*
  * Copyright (c) 2007 Gregory McGarry (g.mcgarry@ieee.org).
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
@@ -910,7 +910,7 @@ upput(NODE *p, int size)
 	size /= SZCHAR;
 	switch (p->n_op) {
 	case REG:
-		fprintf(stdout, "%s", rnames[p->n_rval-R0R1+1]);
+		printf("%s", rnames[p->n_rval-R0R1+1]);
 		break;
 
 	case NAME:
@@ -920,7 +920,7 @@ upput(NODE *p, int size)
 		p->n_lval -= size;
 		break;
 	case ICON:
-		fprintf(stdout, CONFMT, p->n_lval >> 32);
+		printf(CONFMT, p->n_lval >> 32);
 		break;
 	default:
 		comperr("upput bad op %d size %d", p->n_op, size);
@@ -974,7 +974,7 @@ adrput(FILE *io, NODE *p)
 			/* FALLTHROUGH */
 		case LONGLONG:
 		case ULONGLONG:
-			fprintf(stdout, "%s", rnames[p->n_rval-R0R1]);
+			fprintf(io, "%s", rnames[p->n_rval-R0R1]);
 			break;
 		default:
 			fprintf(io, "%s", rnames[p->n_rval]);
