@@ -1,4 +1,4 @@
-/*	$Id: ccconfig.h,v 1.16 2012/08/05 17:27:30 ragge Exp $	*/
+/*	$Id: ccconfig.h,v 1.17 2012/09/26 18:48:58 plunky Exp $	*/
 
 /*
  * Copyright (c) 2004 Anders Magnusson (ragge@ludd.luth.se).
@@ -81,7 +81,7 @@ ld -arch ppc -weak_reference_mismatches non-weak -o a.out -lcrt1.o -lcrt2.o -L/u
 		shared = 1;						\
 		continue;						\
 	} else if (strcmp(argp, "-shared") == 0) {			\
-		owarning(argp);						\
+		oerror(argp);						\
 		continue;						\
 	} 								\
 }
