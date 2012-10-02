@@ -1,4 +1,4 @@
-/*	$Id: cpy.y,v 1.19 2012/10/02 09:24:33 plunky Exp $	*/
+/*	$Id: cpy.y,v 1.20 2012/10/02 09:34:27 plunky Exp $	*/
 
 /*
  * Copyright (c) 2004 Anders Magnusson (ragge@ludd.luth.se).
@@ -62,6 +62,7 @@
  */
 
 %{
+#include "config.h"
 
 #include "cpp.h"
 
