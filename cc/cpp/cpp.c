@@ -1,4 +1,4 @@
-/*	$Id: cpp.c,v 1.162 2012/10/02 09:26:21 plunky Exp $	*/
+/*	$Id: cpp.c,v 1.163 2012/10/02 09:27:46 plunky Exp $	*/
 
 /*
  * Copyright (c) 2004,2010 Anders Magnusson (ragge@ludd.luth.se).
@@ -341,7 +341,7 @@ addidir(char *idir, struct incs **ww)
 	struct incs *w;
 	struct stat st;
 
-	if (stat(idir, &st) == -1 || S_ISDIR(st.st_mode) == 0)
+	if (stat(idir, &st) == -1 || !S_ISDIR(st.st_mode))
 		return; /* ignore */
 	if (*ww != NULL) {
 		for (w = *ww; w->next; w = w->next) {
