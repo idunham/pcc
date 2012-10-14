@@ -1,4 +1,4 @@
-/*	$Id: cc.c,v 1.258 2012/09/24 11:44:29 plunky Exp $	*/
+/*	$Id: cc.c,v 1.259 2012/10/14 08:37:15 ragge Exp $	*/
 
 /*-
  * Copyright (c) 2011 Joerg Sonnenberger <joerg@NetBSD.org>.
@@ -1487,6 +1487,7 @@ struct flgcheck {
 	{ &pthreads, 1, "-D_PTHREADS" },
 	{ &Oflag, 1, "-D__OPTIMIZE__" },
 	{ &tflag, 1, "-t" },
+	{ &kflag, 1, "-D__PIC__" },
 	{ 0 },
 };
 
