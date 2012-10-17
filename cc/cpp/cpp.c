@@ -1,4 +1,4 @@
-/*	$Id: cpp.c,v 1.172 2012/10/11 10:28:35 plunky Exp $	*/
+/*	$Id: cpp.c,v 1.173 2012/10/17 09:52:52 plunky Exp $	*/
 
 /*
  * Copyright (c) 2004,2010 Anders Magnusson (ragge@ludd.luth.se).
@@ -82,6 +82,7 @@ int Cflag, Mflag, dMflag, Pflag, MPflag;
 usch *Mfile, *MPfile, *Mxfile;
 struct initar *initar;
 int readmac, lastoch;
+int defining;
 
 /* include dirs */
 struct incs {
