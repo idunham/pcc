@@ -1,4 +1,4 @@
-/*	$Id: token.c,v 1.88 2012/10/20 17:18:10 plunky Exp $	*/
+/*	$Id: token.c,v 1.89 2012/10/20 17:20:24 plunky Exp $	*/
 
 /*
  * Copyright (c) 2004,2009 Anders Magnusson. All rights reserved.
@@ -299,6 +299,7 @@ nxt:				ch = NXTCH();
 				if (ch == '\\') {
 					ch = NXTCH();
 					if (ch == '\n') {
+						nnl++;
 						goto nxt;
 					} else {
 						unch(ch);
