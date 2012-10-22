@@ -1,4 +1,4 @@
-/*	$Id: trees.c,v 1.317 2012/10/22 08:55:33 plunky Exp $	*/
+/*	$Id: trees.c,v 1.318 2012/10/22 09:13:42 plunky Exp $	*/
 /*
  * Copyright (c) 2003 Anders Magnusson (ragge@ludd.luth.se).
  * All rights reserved.
@@ -1079,6 +1079,7 @@ chkpun(NODE *p)
 			uerror("using void value");
 			return;
 		}
+		break;
 	case COLON:
 		if (t1 == VOID && t2 == VOID)
 			return;
