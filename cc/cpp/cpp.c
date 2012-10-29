@@ -1,4 +1,4 @@
-/*	$Id: cpp.c,v 1.180 2012/10/19 12:09:00 plunky Exp $	*/
+/*	$Id: cpp.c,v 1.181 2012/10/29 17:05:35 plunky Exp $	*/
 
 /*
  * Copyright (c) 2004,2010 Anders Magnusson (ragge@ludd.luth.se).
@@ -393,7 +393,7 @@ line(void)
 	ifiles->lineno = (int)(yylval.node.nd_val - 1);
 
 	if ((c = yylex()) == '\n')
-		return;
+		goto okret;
 
 	if (c != STRING)
 		goto bad;
@@ -415,8 +415,11 @@ line(void)
 	}
 	memcpy(lbuf, p, c);
 	ifiles->fname = lbuf;
-	if (yylex() == '\n')
-		return;
+	if (yylex() != '\n')
+		goto bad;
+
+okret:	prtline();
+	return;
 
 bad:	error("bad line directive");
 }
